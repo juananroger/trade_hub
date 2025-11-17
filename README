@@ -1,0 +1,9 @@
+This project documents the development and implementation of a systematic trading framework built around two distinct strategy types: mean-reversion and trend-following. The focus is on futures markets, where contract structure, leverage, and liquidity offer a practical foundation for model deployment and risk management.
+
+Rather than optimizing for backtest performance, the strategies are built with an emphasis on robustness, capital efficiency, and operational viability. Preference is given to simple, testable rules that align with observable market behavior, without overfitting.
+
+Simulations are run using Zipline Reloaded, a Python-based backtesting engine capable of handling daily futures data, expiration logic, and contract rolling. Data is sourced from Norgate, selected for its quality and survivorship-bias-free structure.
+
+The mean-reversion component targets short-term pullbacks within broader uptrends, while the trend-following model seeks to capture directional moves using EMA structures and crossovers. Both strategies allocate equal risk per market via volatility normalization and use a rolling Sortino Ratio to filter unfavorable conditions for those long-only strategies.
+
+The framework supports automatic rolling, dynamic rebalancing, and a consistent risk budget across instruments. This report presents the rationale, design, and implementation details for each component, along with performance results and visual outputs. The aim is to demonstrate not just how the models work, but how to implement it in a demo or real Interactive Brokers account.
